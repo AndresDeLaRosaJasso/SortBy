@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 :root{
     --primary-color: #0F0F10;
     --secondary-color: #F4F1EC;
@@ -9,6 +11,19 @@
     --wText: #F4F1EC;
 }
 
+.lato-regular {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.playfair-display-bold {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -17,5 +32,103 @@
 
 .borderShadow{
     border-radius: 6px;
-    box-shadow: 0px 0px 60px 10px rgba(0, 0, 0, 0.27);
+    box-shadow: 0px 0px 60px 10px rgb(244, 241, 236, 0.17);
 }
+
+.pageBackground{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.pageBackground::before{
+    content: "";
+    position: absolute;
+    inset: -40px;
+
+    background-image: url(src/img/silverDust.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    animation: up-loop 20000ms linear 0ms infinite;
+
+    z-index: -1;
+}
+
+/* HOME section */
+#home{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.showSorteos{
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 7px;
+}
+
+.showSorteos:hover .sorteo{
+    transform: scale(0.95);
+    opacity: 0.7;
+}
+
+.sorteo{
+    position: relative;
+
+    width: 100%;
+    height: 280px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    cursor: pointer;
+
+    border: 1px solid rgb(244, 241, 236, 0.27);
+    box-shadow: inset 0px 0px 60px 16px rgba(0, 0, 0, 0.67);
+
+    transition:
+        transform 400ms ease,
+        filter 400ms ease,
+        opacity 400ms ease,
+        box-shadow 400ms ease;
+}
+
+.showSorteos .sorteo:hover{
+    transform: scale(1.05);
+    opacity: 1;
+    box-shadow: inset 0px 0px 60px 16px rgba(0, 0, 0, 0.27);
+    
+    z-index: 2;
+}
+
+.sorteo-01{
+    background-image: url(src/img/casino.jpg);
+
+}
+.sorteo-02{
+    background-image: url(src/img/beach.jpg);
+
+}
+.sorteo-03{
+    background-image: url(src/img/clock.jpg);
+
+}
+
+.sorteotexto{
+    font-size: 1.7rem;
+    color: var(--wText);
+
+    position: absolute;
+    bottom: 15px;
+    left: 10px;
+}
+
+/* HOME section END */
