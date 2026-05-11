@@ -1,0 +1,21 @@
+:root{
+    --primary-color: #0F0F10;
+    --secondary-color: #F4F1EC;
+    --tertiary-color: linear-gradient(90deg,
+                                    rgb(184, 138, 47) 0%,
+                                    rgb(215, 189, 138) 50%,
+                                    rgba(158, 116, 38, 0.9) 100% );
+    --bText: #0F0F10;
+    --wText: #F4F1EC;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.borderShadow{
+    border-radius: 6px;
+    box-shadow: 0px 0px 60px 10px rgba(0, 0, 0, 0.27);
+}
