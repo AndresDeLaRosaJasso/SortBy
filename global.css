@@ -68,7 +68,7 @@
 }
 
 .showSorteos{
-    min-width: 60%;
+    width: clamp(700px, 60vw, 1500px);
     display: flex;
     gap: 11px;
     
