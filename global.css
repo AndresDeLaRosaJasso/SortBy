@@ -68,23 +68,24 @@
 }
 
 .showSorteos{
-    width: 60%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 7px;
+    min-width: 60%;
+    display: flex;
+    gap: 11px;
+    
+    transition:
+        flex 600ms cubic-bezier(.22,.61,.36,1),
+        opacity 400ms ease,
+        box-shadow 400ms ease;
 }
 
-.showSorteos:hover .sorteo{
-    transform: scale(0.95);
-    opacity: 0.7;
-}
 
 .sorteo{
     position: relative;
 
-    width: 100%;
-    height: 280px;
-
+    flex: 1;
+    aspect-ratio: 5/4;
+    opacity: 0.8;
+    
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -95,18 +96,25 @@
     box-shadow: inset 0px 0px 60px 16px rgba(0, 0, 0, 0.67);
 
     transition:
-        transform 400ms ease,
-        filter 400ms ease,
-        opacity 400ms ease,
+        flex 600ms cubic-bezier(.22,.61,.36,1),
+        opacity 500ms ease,
         box-shadow 400ms ease;
 }
 
-.showSorteos .sorteo:hover{
-    transform: scale(1.05);
+.sorteo:hover{
+    flex: 3;
     opacity: 1;
-    box-shadow: inset 0px 0px 60px 16px rgba(0, 0, 0, 0.27);
-    
-    z-index: 2;
+    box-shadow: inset 0px 0px 60px 16px rgba(0, 0, 0, 0.87);
+}
+
+
+.sorteo:hover .sorteotexto{
+    opacity: 1;
+    transition:
+        transform 400ms ease,
+        filter 400ms ease,
+        opacity 600ms ease,
+        box-shadow 400ms ease;
 }
 
 .sorteo-01{
@@ -123,11 +131,12 @@
 }
 
 .sorteotexto{
-    font-size: 1.7rem;
+    font-size: 1.3rem;
     color: var(--wText);
+    opacity: 0.4;
 
     position: absolute;
-    bottom: 15px;
+    bottom: 10px;
     left: 10px;
 }
 
